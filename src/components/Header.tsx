@@ -6,7 +6,7 @@ import { ShoppingBag } from "lucide-react";
 
 export const Header = () => {
   return (
-    <header className="fixed top-0 left-0 w-full h-20 bg-[#F8F7F3] flex items-center justify-between">
+    <header className="z-50 fixed top-0 left-0 w-full h-20 bg-[#F8F7F3] flex items-center justify-between">
       <div className="w-full max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Image

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export const Destaques = () => {
   return (
     <section
-      className="max-w-7xl mx-auto py-24 flex flex-col items-center gap-10"
+      className="max-w-7xl mx-auto flex flex-col items-center gap-10 pb-20"
       id="destaques"
     >
       <h1 className="text-4xl font-bebas">Nossos Destaques</h1>
