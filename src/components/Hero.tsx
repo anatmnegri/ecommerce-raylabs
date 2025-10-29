@@ -16,18 +16,18 @@ export const Hero = () => {
       </div>
 
       <div className="bg-[#F8F6F3] rounded-lg border grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto px-6 py-10 -top-18 relative">
-        <div className="flex flex-col gap-4">
-          <h2 className="text-xl font-bebas">CAFÉ DE QUALIDADE NA SUA CASA</h2>
+        <div className="flex flex-col gap-4 border-r">
+          <h2 className="text-xl font-semibold font-bebas">
+            CAFÉ DE QUALIDADE NA SUA CASA
+          </h2>
           <p className="text-sm font-poppins text-gray-600">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor
           </p>
-          <Button className="bg-[#EE8542] hover:bg-[#ca682c] text-white rounded-full w-fit">
-            SAIBA MAIS
-          </Button>
+          <Button className=" w-fit">SAIBA MAIS</Button>
         </div>
         <div className="flex flex-col gap-4">
-          <h2 className="text-xl font-bebas">KOFFEE</h2>
+          <h2 className="text-xl font-bebas font-semibold">KOFFEE</h2>
           <p className="text-sm font-poppins text-gray-600">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor

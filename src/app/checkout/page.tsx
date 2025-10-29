@@ -12,7 +12,7 @@ export default function CheckoutPage() {
         <Header />
         <div className=" flex justify-center gap-8 md:flex-row md:gap-16 pt-24 ">
           <div>
-            <h2 className="text-2xl font-bold ">Revise seu pedido</h2>
+            <h2 className="text-2xl font-semibold">REVISE SEU PEDIDO</h2>
             <CartItemCard
               imageUrl={productImg}
               title="Café Torrado Notas Cítricas"
@@ -37,7 +37,7 @@ export default function CheckoutPage() {
             <TotalPrice price={44.44} quantity={2} />
           </div>
           <div>
-            <h2 className="text-2xl font-bold ">Preencha as informações</h2>
+            <h2 className="text-2xl font-semibold">PRENCHA AS INFORMAÇÕES</h2>
             <CheckoutForms />
           </div>
         </div>
