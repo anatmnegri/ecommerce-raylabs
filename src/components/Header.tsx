@@ -1,0 +1,57 @@
+"use client";
+import Image from "next/image";
+import logo from "../../public/images/Logo.svg";
+import Link from "next/link";
+import { ShoppingBag } from "lucide-react";
+
+export const Header = () => {
+  return (
+    <header className="fixed top-0 left-0 w-full h-20 bg-[#F8F7F3] flex items-center justify-between px-12 border-b border-gray-200 z-50">
+      <Link href="/" className="flex items-center gap-2">
+        <Image
+          src={logo}
+          alt="Logo Koffee"
+          width={100}
+          height={40}
+          className="object-contain"
+        />
+      </Link>
+      <nav className="flex items-center gap-10 text-sm tracking-widest">
+        <Link
+          href="#destaques"
+          className="text-[#393330] hover:text-[#EE8542] transition-colors"
+        >
+          DESTAQUES
+        </Link>
+        <Link
+          href="#produtos"
+          className="text-[#393330] hover:text-[#EE8542] transition-colors"
+        >
+          PRODUTOS
+        </Link>
+        <Link
+          href="#sobre"
+          className="text-[#393330] hover:text-[#EE8542] transition-colors"
+        >
+          SOBRE
+        </Link>
+      </nav>
+
+      <div className="flex items-center gap-6 text-sm tracking-widest text-[#393330]">
+        <button className="hover:text-[#EE8542] cursor-pointer transition-colors">
+          ENTRE OU CADASTRE-SE
+        </button>
+
+        <button
+          className="hover:text-[#EE8542] cursor-pointer transition-colors relative"
+          aria-label="Abrir carrinho"
+        >
+          <ShoppingBag className="w-5 h-5" />
+          <span className="absolute -top-2 -right-2 bg-[#EE8542] text-white text-xs rounded-full px-1">
+            2
+          </span>
+        </button>
+      </div>
+    </header>
+  );
+};
