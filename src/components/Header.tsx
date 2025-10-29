@@ -40,8 +40,9 @@ export const Header = () => {
 
         <div className="flex items-center gap-6 text-sm tracking-widest text-[#393330]">
           <button className="hover:text-[#EE8542] cursor-pointer transition-colors">
-            <Link href="/orders" className="relative">
-              <span>ENTRE OU CADASTRE-SE</span>
+            <Link href="/orders" className="relative flex flex-col ">
+              <span>OLÁ, FULANO</span>
+              <span className="text-xs">Ver Pedidos</span>
             </Link>
           </button>
 

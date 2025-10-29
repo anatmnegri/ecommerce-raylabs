@@ -12,17 +12,18 @@ export function TotalPrice({ price, quantity }: TotalPriceProps) {
       <div className="flex flex-1 flex-col justify-between gap-2">
         <div className="gap-2 flex flex-col">
           <h3 className="text-sm font-semibold">Total</h3>
-          <p className="text-xs text-muted-foreground">
-            Quantidade: {quantity}
-          </p>
+
           <p className="text-base font-bold text-[#EE8542]">
             R${price.toFixed(2)}
+          </p>
+          <p className="text-xs text-muted-foreground">
+            Quantidade de Itens: {quantity}
           </p>
         </div>
 
         <div className="flex items-center justify-between">
           <Button variant="outline" size="sm" className="rounded-full">
-            Pagar Agora
+            Adicionar Mais Produtos
           </Button>
         </div>
       </div>

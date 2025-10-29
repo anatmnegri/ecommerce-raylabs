@@ -19,6 +19,10 @@ export default function CheckoutForm() {
             <Label htmlFor="email">E-mail</Label>
             <Input id="email" type="email" placeholder="seuemail@email.com" />
           </div>
+          <div>
+            <Label htmlFor="cpf">CPF</Label>
+            <Input id="cpf" type="text" placeholder="000.000.000-00" />
+          </div>
 
           <div>
             <Label htmlFor="address">Endereço</Label>
@@ -32,8 +36,8 @@ export default function CheckoutForm() {
             </div>
 
             <div className="w-24">
-              <Label htmlFor="zip">CEP</Label>
-              <Input id="zip" placeholder="00000-000" />
+              <Label htmlFor="cep">CEP</Label>
+              <Input id="cep" placeholder="00000-000" />
             </div>
           </div>
 

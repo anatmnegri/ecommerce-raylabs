@@ -13,10 +13,10 @@ export const Destaques = () => {
         <Button>
           <p>Mais Pedidos</p>
         </Button>
-        <Button>
+        <Button variant="outline" className="rounded-full">
           <p>Novos Produtos</p>
         </Button>
-        <Button>
+        <Button variant="outline" className="rounded-full">
           <p>Best Sellers</p>
         </Button>
       </div>
