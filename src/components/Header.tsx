@@ -40,17 +40,21 @@ export const Header = () => {
 
         <div className="flex items-center gap-6 text-sm tracking-widest text-[#393330]">
           <button className="hover:text-[#EE8542] cursor-pointer transition-colors">
-            ENTRE OU CADASTRE-SE
+            <Link href="/orders" className="relative">
+              <span>ENTRE OU CADASTRE-SE</span>
+            </Link>
           </button>
 
           <button
             className="hover:text-[#EE8542] cursor-pointer transition-colors relative"
             aria-label="Abrir carrinho"
           >
-            <ShoppingBag className="w-5 h-5" />
-            <span className="absolute -top-2 -right-2 bg-[#EE8542] text-white text-xs rounded-full px-1">
-              2
-            </span>
+            <Link href="/checkout" className="relative">
+              <ShoppingBag className="w-5 h-5 text-[#393330] hover:text-[#EE8542] transition" />
+              <span className="absolute -top-2 -right-2 bg-[#EE8542] text-white text-xs rounded-full px-1">
+                2
+              </span>
+            </Link>
           </button>
         </div>
       </div>

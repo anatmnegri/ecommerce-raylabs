@@ -1,4 +1,4 @@
-import { ProductCard } from "./ProductCard";
+import { ProductCard } from "../components/ProductCard";
 import productImg from "../..//public/images/productImg.svg";
 import { Button } from "@/components/ui/button";
 
@@ -8,15 +8,15 @@ export const Destaques = () => {
       className="max-w-7xl mx-auto py-24 flex flex-col items-center gap-10"
       id="destaques"
     >
-      <h1 className="text-4xl">Nossos Destaques</h1>
-      <div className="flex items-center gap-4">
-        <Button className="bg-[#EE8542] hover:bg-[#ca682c] rounded-full cursor-pointer">
+      <h1 className="text-4xl font-bebas">Nossos Destaques</h1>
+      <div className="flex items-center gap-4 font-poppins">
+        <Button>
           <p>Mais Pedidos</p>
         </Button>
-        <Button className="bg-transparent text-[#EE8542] hover:bg-[#EE8542] hover:text-white border-2 border-[#EE8542] rounded-full cursor-pointer">
+        <Button>
           <p>Novos Produtos</p>
         </Button>
-        <Button className="bg-transparent text-[#EE8542] hover:bg-[#EE8542] hover:text-white border-2 border-[#EE8542] rounded-full cursor-pointer">
+        <Button>
           <p>Best Sellers</p>
         </Button>
       </div>

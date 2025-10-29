@@ -30,10 +30,7 @@ export function ProductCard({
 
       <CardFooter className="flex justify-between items-center">
         <span className="font-bold text-[#EE8542]">{price}</span>
-        <Button
-          size="icon"
-          className="bg-[#EE8542] hover:bg-[#ca682c] rounded-full cursor-pointer"
-        >
+        <Button size="icon">
           <Plus className="h-4 w-4 text-white" />
         </Button>
       </CardFooter>
