@@ -5,7 +5,6 @@ export default function OrdersPage() {
   return (
     <section className="min-h-screen w-full">
       <div className="max-w-7xl mx-auto py-8">
-        <Header />
         <h2 className="text-2xl font-semibold pt-24 text-[#393330]">
           HISTÓRICO DE PEDIDOS
         </h2>
