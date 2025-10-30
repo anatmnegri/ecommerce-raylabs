@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${bebasNeue.variable} ${poppins.variable}`}>
-      <body className="font-poppins">{children}</body>
+      <body className="bg-[#F8F7F3]">{children}</body>
     </html>
   );
 }
