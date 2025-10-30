@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function CheckoutForm() {
   return (
-    <Card className="mx-auto p-6 w-full max-w-lg bg-transparent shadow-none border-none">
+    <Card className=" py-6 w-full max-w-lg bg-transparent shadow-none border-none">
       <CardContent>
         <form className="space-y-4">
           <div>

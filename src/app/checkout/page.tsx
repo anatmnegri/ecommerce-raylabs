@@ -7,39 +7,41 @@ import { TotalPrice } from "@/components/TotalPrice";
 
 export default function CheckoutPage() {
   return (
-    <section className="bg-[#F8F7F3]">
-      <div className="max-w-7xl mx-auto">
-        <Header />
-        <div className=" flex justify-center gap-8 md:flex-row md:gap-16 pt-24 ">
-          <div>
-            <h2 className="text-2xl font-semibold">REVISE SEU PEDIDO</h2>
-            <CartItemCard
-              imageUrl={productImg}
-              title="Café Torrado Notas Cítricas"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-              price={44.44}
-              quantity={2}
-            />
-            <CartItemCard
-              imageUrl={productImg}
-              title="Café Torrado Notas Cítricas"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-              price={44.44}
-              quantity={2}
-            />
-            <CartItemCard
-              imageUrl={productImg}
-              title="Café Torrado Notas Cítricas"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-              price={44.44}
-              quantity={2}
-            />
-            <TotalPrice price={44.44} quantity={2} />
-          </div>
-          <div>
-            <h2 className="text-2xl font-semibold">PRENCHA AS INFORMAÇÕES</h2>
-            <CheckoutForms />
-          </div>
+    <section className="max-w-7xl mx-auto py-8">
+      <Header />
+      <div className=" flex justify-between gap-8 md:flex-row md:gap-16 flex-col">
+        <div className="basis-1/2">
+          <h2 className="text-2xl font-semibold pt-24 text-[#393330]">
+            REVISE SEU PEDIDO
+          </h2>
+          <CartItemCard
+            imageUrl={productImg}
+            title="Café Torrado Notas Cítricas"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+            price={44.44}
+            quantity={2}
+          />
+          <CartItemCard
+            imageUrl={productImg}
+            title="Café Torrado Notas Cítricas"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+            price={44.44}
+            quantity={2}
+          />
+          <CartItemCard
+            imageUrl={productImg}
+            title="Café Torrado Notas Cítricas"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+            price={44.44}
+            quantity={2}
+          />
+          <TotalPrice price={44.44} quantity={2} />
+        </div>
+        <div className="basis-1/2">
+          <h2 className="text-2xl font-semibold pt-24 text-[#393330]">
+            PRENCHA AS INFORMAÇÕES
+          </h2>
+          <CheckoutForms />
         </div>
       </div>
     </section>

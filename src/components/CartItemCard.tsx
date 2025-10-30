@@ -30,7 +30,7 @@ export function CartItemCard({
         />
       </div>
 
-      <div className="flex flex-1 flex-col justify-between gap-2">
+      <div className="flex flex-col justify-between gap-2">
         <div className="gap-2 flex flex-col">
           <h3 className="text-sm font-semibold">{title}</h3>
           <p className="text-xs text-muted-foreground">{description}</p>
@@ -40,12 +40,18 @@ export function CartItemCard({
         </div>
 
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" className="rounded-full">
+          <div className="flex items-center gap-1 border border-[#EE8542] rounded-full">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="rounded-full border-tr"
+            >
               <Minus size={16} />
             </Button>
-            <span className="text-sm font-medium">{quantity}</span>
-            <Button variant="outline" size="sm" className="rounded-full">
+            <span className="text-sm font-medium text-[#EE8542]">
+              {quantity}
+            </span>
+            <Button variant="ghost" size="sm" className="rounded-full">
               <Plus size={16} />
             </Button>
           </div>
