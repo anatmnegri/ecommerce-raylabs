@@ -25,7 +25,7 @@ export const Header = () => {
             DESTAQUES
           </Link>
           <Link
-            href="#produtos"
+            href="/products"
             className="text-[#393330] hover:text-[#EE8542] transition-colors"
           >
             PRODUTOS
