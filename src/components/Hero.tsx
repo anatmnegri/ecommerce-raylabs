@@ -39,9 +39,9 @@ export const Hero = ({ imageUrl, title, infosCard }: HeroProps) => {
       <div
         className={` ${
           infosCard ? "grid" : "hidden"
-        } rounded-lg bg-[#F8F6F3] border  grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto px-6 py-10 -top-18 relative`}
+        } rounded-lg bg-[#F8F6F3] border grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-4 lg:mx-auto px-6 py-10 -top-18 relative`}
       >
-        <div className="flex flex-col gap-4 border-r">
+        <div className="flex flex-col gap-4 md:border-r">
           <h2 className="text-xl font-semibold font-bebas">
             CAFÉ DE QUALIDADE NA SUA CASA
           </h2>

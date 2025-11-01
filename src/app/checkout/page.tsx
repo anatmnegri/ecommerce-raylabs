@@ -7,8 +7,8 @@ import { TotalPrice } from "@/components/TotalPrice";
 
 export default function CheckoutPage() {
   return (
-    <section className="max-w-7xl mx-auto py-8">
-      <div className=" flex justify-between gap-8 md:flex-row md:gap-16 flex-col">
+    <section className="max-w-7xl mx-auto py-8 px-4 sm:px-8">
+      <div className=" flex md:justify-between px-20 md:px-0 gap-8 md:flex-row md:gap-16 flex-col">
         <div className="basis-1/2">
           <h2 className="text-2xl font-semibold pt-24 text-[#393330]">
             REVISE SEU PEDIDO
