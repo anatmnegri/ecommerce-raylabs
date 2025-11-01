@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Minus, Plus, Trash } from "lucide-react";
+import { useState } from "react";
 
 interface CartItemCardProps {
   imageUrl: string;
@@ -17,8 +18,18 @@ export function CartItemCard({
   title,
   description,
   price,
-  quantity,
+  quantity: initialQuantity,
 }: CartItemCardProps) {
+  const [quantity, setQuantity] = useState(initialQuantity);
+  const handleIncrement = () => {
+    setQuantity((prev) => prev + 1);
+  };
+  const handleDecrement = () => {
+    if (quantity > 1) {
+      setQuantity((prev) => prev - 1);
+    }
+  };
+
   return (
     <div className="h-40 flex items-center border-b gap-4">
       <div>
@@ -45,13 +56,19 @@ export function CartItemCard({
               variant="ghost"
               size="sm"
               className="rounded-full border-tr"
+              onClick={handleDecrement}
             >
               <Minus size={16} />
             </Button>
             <span className="text-sm font-medium text-[#EE8542]">
               {quantity}
             </span>
-            <Button variant="ghost" size="sm" className="rounded-full">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="rounded-full"
+              onClick={handleIncrement}
+            >
               <Plus size={16} />
             </Button>
           </div>
