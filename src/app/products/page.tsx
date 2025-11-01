@@ -8,10 +8,8 @@ export default function Products() {
   return (
     <section className="min-h-screen w-full">
       <Hero imageUrl={productImg} title="PRODUTOS" infosCard={false} />
-      <div className="max-w-7xl mx-auto py-8">
-        <div>
-          <ProductsList title="PEGUE TUDO QUE PRECISAR" />
-        </div>
+      <div className="max-w-7xl mx-auto flex flex-col items-center gap-10 pb-20">
+        <ProductsList title="PEGUE TUDO QUE PRECISAR" />
       </div>
     </section>
   );

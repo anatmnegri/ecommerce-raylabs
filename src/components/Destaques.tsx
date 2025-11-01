@@ -1,6 +1,8 @@
 import { ProductCard } from "../components/ProductCard";
 import productImg from "../..//public/images/productImg.svg";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Categorias } from "./Categorias";
 
 export const Destaques = () => {
   return (
@@ -8,17 +10,10 @@ export const Destaques = () => {
       className="max-w-7xl mx-auto flex flex-col items-center gap-10 pb-20"
       id="destaques"
     >
-      <h1 className="text-4xl font-bebas">Nossos Destaques</h1>
       <div className="flex items-center gap-4 font-poppins">
-        <Button>
-          <p>Mais Pedidos</p>
-        </Button>
-        <Button variant="outline" className="rounded-full">
-          <p>Novos Produtos</p>
-        </Button>
-        <Button variant="outline" className="rounded-full">
-          <p>Best Sellers</p>
-        </Button>
+        <Categorias title="Mais Pedidos" />
+        <Categorias title="Novos Produtos" />
+        <Categorias title="Best Sellers" />
       </div>
       <div className="grid grid-cols-4 gap-6">
         <ProductCard
@@ -46,10 +41,11 @@ export const Destaques = () => {
           price="R$44,44"
         />
       </div>
-
-      <Button className="bg-[#EE8542] hover:bg-[#ca682c] rounded-full cursor-pointer">
-        <p>Ver Tudo</p>
-      </Button>
+      <Link href="/products">
+        <Button className="bg-[#EE8542] hover:bg-[#ca682c] rounded-full px-6 py-3">
+          <p>Ver Tudo</p>
+        </Button>
+      </Link>
     </section>
   );
 };
