@@ -1,8 +1,19 @@
-import { Header } from "@/components/Header";
+"use client";
+
+import { useEffect, useState } from "react";
 import { ProductCard } from "@/components/ProductCard";
 import productImg from "../../../public/images/productImg.svg";
 
 export default function Products() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/produtos")
+      .then((res) => res.json())
+      .then((data) => setProducts(data))
+      .catch((err) => console.error("Erro ao buscar produtos:", err));
+  }, []);
+
   return (
     <section className="min-h-screen w-full">
       <div className="max-w-7xl mx-auto py-8">
@@ -10,56 +21,15 @@ export default function Products() {
           PEQUE TUDO QUE PRECISAR
         </h2>
         <div className="grid grid-cols-4 gap-6 pt-10">
-          <ProductCard
-            image={productImg}
-            title="Café Torrado Notas Cítricas"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
-            price="R$44,44"
-          />
-          <ProductCard
-            image={productImg}
-            title="Café Torrado Notas Cítricas"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
-            price="R$44,44"
-          />
-          <ProductCard
-            image={productImg}
-            title="Café Torrado Notas Cítricas"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
-            price="R$44,44"
-          />
-          <ProductCard
-            image={productImg}
-            title="Café Torrado Notas Cítricas"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
-            price="R$44,44"
-          />
-        </div>
-        <div className="grid grid-cols-4 gap-6 pt-10">
-          <ProductCard
-            image={productImg}
-            title="Café Torrado Notas Cítricas"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
-            price="R$44,44"
-          />
-          <ProductCard
-            image={productImg}
-            title="Café Torrado Notas Cítricas"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
-            price="R$44,44"
-          />
-          <ProductCard
-            image={productImg}
-            title="Café Torrado Notas Cítricas"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
-            price="R$44,44"
-          />
-          <ProductCard
-            image={productImg}
-            title="Café Torrado Notas Cítricas"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
-            price="R$44,44"
-          />
+          {products.map((produto: any) => (
+            <ProductCard
+              key={produto.id}
+              image={productImg}
+              title={produto.nome}
+              description={produto.descricao}
+              price={`R$${produto.preco}`}
+            />
+          ))}
         </div>
       </div>
     </section>

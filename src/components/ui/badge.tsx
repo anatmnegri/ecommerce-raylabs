@@ -9,14 +9,16 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        confirmed: "border-transparent bg-[#65c762] text-primary-foreground",
-        cancelled: "border-transparent bg-neutral-400 text-primary-foreground ",
-        pending: "border-transparent bg-[#F3BA49] text-primary-foreground",
-        failed: "border-transparent bg-[#bd3d3d] text-primary-foreground",
+        CONFIRMED: "border-transparent bg-[#65c762] text-primary-foreground",
+        CANCELLED: "border-transparent bg-neutral-400 text-primary-foreground ",
+        PENDING_PAYMENT:
+          "border-transparent bg-[#F3BA49] text-primary-foreground",
+        PAYMENT_FAILED:
+          "border-transparent bg-[#bd3d3d] text-primary-foreground",
       },
     },
     defaultVariants: {
-      variant: "confirmed",
+      variant: "CONFIRMED",
     },
   }
 );

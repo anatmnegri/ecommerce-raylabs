@@ -1,0 +1,62 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "Ana Silva",
+      "email": "ana.silva@example.com",
+      "cpf": "123.456.789-00"
+    }
+  ],
+  "produtos": [
+    {
+      "id": 101,
+      "nome": "Café Torrado Notas Cítricas",
+      "descricao": "Café premium com notas cítricas e aroma intenso.",
+      "preco": 44.44,
+      "imagem": "public/images/productImg.svg",
+      "estoque": 50
+    },
+    {
+      "id": 102,
+      "nome": "Café Moído Tradicional",
+      "descricao": "Blend equilibrado para todos os momentos.",
+      "preco": 35.9,
+      "imagem": "public/images/cafe-tradicional.png",
+      "estoque": 4
+    },
+    {
+      "id": 103,
+      "nome": "Café em Grãos Especial",
+      "descricao": "Blend equilibrado para todos os momentos.",
+      "preco": 23.9,
+      "imagem": "public/images/cafe-tradicional.png",
+      "estoque": 2
+    }
+  ],
+  "pedidos": [
+    {
+      "id": 5001,
+      "clienteId": 1,
+      "itens": [
+        { "produtoId": 101, "quantidade": 2 },
+        { "produtoId": 102, "quantidade": 1 }
+      ],
+      "status": "PENDING_PAYMENT",
+      "total": 124.78
+    },
+    {
+      "id": 5002,
+      "clienteId": 2,
+      "itens": [{ "produtoId": 101, "quantidade": 1 }],
+      "status": "CONFIRMED",
+      "total": 44.44
+    },
+    {
+      "id": 5003,
+      "clienteId": 1,
+      "itens": [{ "produtoId": 102, "quantidade": 3 }],
+      "status": "PAYMENT_FAILED",
+      "total": 107.7
+    }
+  ]
+}

@@ -7,23 +7,39 @@ interface MyOrdersTableProps {
   id: number;
   status: string;
   total: number;
+  itens: {
+    produtoId: number;
+    quantidade: number;
+    nome?: string;
+    descricao?: string;
+    imagem?: string;
+    preco?: number;
+  }[];
 }
 
-export function MyOrdersTable({ id, status, total }: MyOrdersTableProps) {
+export function MyOrdersTable({
+  id,
+  status,
+  total,
+  itens,
+}: MyOrdersTableProps) {
   return (
     <>
       <div className="px-4 pt-8 max-w-7xl mx-auto">
         <h3 className="text-lg font-semibold text-[#393330]">Pedido #{id}</h3>
       </div>
       <div className="flex flex-row max-w-7xl mx-auto px-4 border-b items-center justify-between">
-        <div>
-          <MyOrder
-            imageUrl={Image}
-            title="Produto x"
-            description="Descrição do produto x"
-            price={29.99}
-            quantity={1}
-          />
+        <div className="flex flex-col gap-4">
+          {itens.map((item, index) => (
+            <MyOrder
+              key={index}
+              imageUrl={item.imagem || Image}
+              title={item.nome || `Produto ${item.produtoId}`}
+              description={item.descricao || "Descrição não disponível"}
+              price={item.preco || 0}
+              quantity={item.quantidade}
+            />
+          ))}
         </div>
 
         <div className="flex flex-col items-center text-sm font-medium gap-2">
@@ -35,15 +51,21 @@ export function MyOrdersTable({ id, status, total }: MyOrdersTableProps) {
         <div className="flex flex-col items-center text-sm font-medium gap-2">
           <span className="text-xs text-[#393330]">Status:</span>
           <Badge
-            variant={status as "confirmed" | "cancelled" | "pending" | "failed"}
+            variant={
+              status as
+                | "CONFIRMED"
+                | "CANCELLED"
+                | "PENDING_PAYMENT"
+                | "PAYMENT_FAILED"
+            }
           >
-            {status === "confirmed"
+            {status === "CONFIRMED"
               ? "Confirmado"
-              : status === "cancelled"
+              : status === "CANCELLED"
               ? "Cancelado"
-              : status === "pending"
+              : status === "PENDING_PAYMENT"
               ? "Pendente"
-              : status === "failed"
+              : status === "PAYMENT_FAILED"
               ? "Falhou"
               : status}
           </Badge>

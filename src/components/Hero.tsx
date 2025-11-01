@@ -6,6 +6,7 @@ export const Hero = () => {
   return (
     <section className="w-full">
       <div className="relative w-full h-[400px] md:h-[680px]">
+        <h1 className="absolute text-4xl font-bold text-center">PRODUTOS</h1>
         <Image
           src={HeroImg}
           alt="Café e balcão"
