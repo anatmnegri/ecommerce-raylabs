@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Minus, Plus, Trash } from "lucide-react";
-import { useState } from "react";
 
 interface CartItemCardProps {
   imageUrl: string;
@@ -11,6 +10,8 @@ interface CartItemCardProps {
   description: string;
   price: number;
   quantity: number;
+  onQuantityChange?: (quantity: number) => void;
+  onRemove?: () => void;
 }
 
 export function CartItemCard({
@@ -18,16 +19,22 @@ export function CartItemCard({
   title,
   description,
   price,
-  quantity: initialQuantity,
+  quantity,
+  onQuantityChange,
+  onRemove,
 }: CartItemCardProps) {
-  const [quantity, setQuantity] = useState(initialQuantity);
   const handleIncrement = () => {
-    setQuantity((prev) => prev + 1);
+    onQuantityChange?.(quantity + 1);
   };
+  
   const handleDecrement = () => {
     if (quantity > 1) {
-      setQuantity((prev) => prev - 1);
+      onQuantityChange?.(quantity - 1);
     }
+  };
+
+  const handleRemove = () => {
+    onRemove?.();
   };
 
   return (
@@ -72,7 +79,7 @@ export function CartItemCard({
               <Plus size={16} />
             </Button>
           </div>
-          <Button variant="outline" size="sm" className="rounded-full">
+          <Button variant="outline" size="sm" className="rounded-full" onClick={handleRemove}>
             <Trash size={16} className="mr-1" />
             REMOVER
           </Button>

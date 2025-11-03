@@ -1,21 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useProducts } from "@/hooks/useProducts";
 import { ProductCard } from "@/components/ProductCard";
 import productImg from "../../public/images/productImg.svg";
 
-interface ProductsListProps {
-  title?: string;
-}
-export default function ProductsList({ title }: ProductsListProps) {
-  const [products, setProducts] = useState([]);
+export default function ProductsList() {
+  const { data: products, loading, error } = useProducts();
 
-  useEffect(() => {
-    fetch("http://localhost:3001/produtos")
-      .then((res) => res.json())
-      .then((data) => setProducts(data))
-      .catch((err) => console.error("Erro ao buscar produtos:", err));
-  }, []);
+  if (loading) {
+    return <div>Carregando produtos...</div>;
+  }
+
+  if (error) {
+    return <div>Erro ao buscar produtos: {error}</div>;
+  }
 
   return (
     <section className="w-full">
@@ -24,10 +22,11 @@ export default function ProductsList({ title }: ProductsListProps) {
           {products.map((produto: any) => (
             <ProductCard
               key={produto.id}
+              id={produto.id}
               image={productImg}
-              title={produto.nome}
-              description={produto.descricao}
-              price={`R$${produto.preco}`}
+              name={produto.name}
+              description={produto.description}
+              price={`R$${produto.price.toFixed(2)}`}
             />
           ))}
         </div>

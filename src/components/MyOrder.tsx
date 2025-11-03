@@ -32,7 +32,7 @@ export function MyOrder({
         <div className="gap-2 flex flex-col">
           <h3 className="text-sm font-semibold">{title}</h3>
           <p className="text-xs text-muted-foreground">{description}</p>
-          <p className="text-base font-bold text-[#ee4242]">
+          <p className="text-base font-bold text-[#ee8542]">
             R${price.toFixed(2)}
           </p>
         </div>

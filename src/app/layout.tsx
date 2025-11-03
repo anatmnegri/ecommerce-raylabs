@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bebas_Neue, Poppins } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
+import { CartProvider } from "@/contexts/CartContext";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -28,8 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bebasNeue.variable} ${poppins.variable}`}>
       <body className="bg-[#F8F7F3]">
-        <Header />
-        {children}
+        <CartProvider>
+          <Header />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );
