@@ -27,8 +27,11 @@ export interface Order {
 export const getOrders = () =>
   fetchApi<Order[]>("/orders/customer/38c70215-96f3-4bba-85cb-b051d2f98268");
 
-export const createOrder = (orderData: { customerId: string; items: { productId: string; quantity: number; }[] }) =>
-  fetchApi<Order>("/orders", {
+export const createOrder = (orderData: {
+  customerId: string;
+  items: { productId: string; quantity: number }[];
+}) =>
+  fetchApi<Order>("/order", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

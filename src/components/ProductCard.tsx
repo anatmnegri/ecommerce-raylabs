@@ -24,13 +24,7 @@ export function ProductCard({
   const { addItem } = useCart();
 
   const handleAddToCart = () => {
-    addItem({
-      id,
-      name,
-      description,
-      price: parseFloat(price.replace("R$", "").replace(",", ".")),
-      image,
-    });
+    addItem(id);
   };
   return (
     <Card className="w-64 rounded-2xl shadow-md flex flex-col justify-between">

@@ -2,11 +2,32 @@
 import CheckoutForms from "@/components/CheckoutForm";
 import { CartItemCard } from "@/components/CartItemCard";
 import { TotalPrice } from "@/components/TotalPrice";
-import { useCart } from "@/contexts/CartContext";
+import { useCartDetails } from "@/hooks/useCartDetails";
 import productImg from "../../../public/images/productImg.svg";
 
 export default function CheckoutPage() {
-  const { items, getTotalPrice, getTotalItems, updateQuantity, removeItem } = useCart();
+  const {
+    items,
+    getTotalPrice,
+    getTotalItems,
+    updateQuantity,
+    removeItem,
+    loading,
+  } = useCartDetails();
+
+  if (loading) {
+    return (
+      <section className="max-w-7xl mx-auto py-8 px-4 sm:px-8">
+        <div className="flex justify-center items-center min-h-[400px]">
+          <div className="text-center">
+            <h2 className="text-2xl font-semibold pt-24 text-[#393330] mb-4">
+              CARREGANDO...
+            </h2>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   if (items.length === 0) {
     return (
@@ -40,7 +61,9 @@ export default function CheckoutPage() {
               description={item.description}
               price={item.price}
               quantity={item.quantity}
-              onQuantityChange={(newQuantity: number) => updateQuantity(item.id, newQuantity)}
+              onQuantityChange={(newQuantity: number) =>
+                updateQuantity(item.id, newQuantity)
+              }
               onRemove={() => removeItem(item.id)}
             />
           ))}
