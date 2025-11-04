@@ -1,19 +1,11 @@
 "use client";
 import CheckoutForms from "@/components/CheckoutForm";
 import { CartItemCard } from "@/components/CartItemCard";
-import { TotalPrice } from "@/components/TotalPrice";
 import { useCartDetails } from "@/hooks/useCartDetails";
 import productImg from "../../../public/images/productImg.svg";
 
 export default function CheckoutPage() {
-  const {
-    items,
-    getTotalPrice,
-    getTotalItems,
-    updateQuantity,
-    removeItem,
-    loading,
-  } = useCartDetails();
+  const { items, updateQuantity, removeItem, loading } = useCartDetails();
 
   if (loading) {
     return (
@@ -67,11 +59,10 @@ export default function CheckoutPage() {
               onRemove={() => removeItem(item.id)}
             />
           ))}
-          <TotalPrice price={getTotalPrice()} quantity={getTotalItems()} />
         </div>
         <div className="basis-1/2">
           <h2 className="text-2xl font-semibold pt-24 text-[#393330]">
-            PRENCHA AS INFORMAÇÕES
+            FINALIZE SUA COMPRA
           </h2>
           <CheckoutForms />
         </div>
