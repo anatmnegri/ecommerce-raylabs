@@ -10,6 +10,9 @@ export function useCartDetails() {
     updateQuantity,
     getTotalItems,
     clearCart,
+    isCartOpen,
+    openCart,
+    closeCart,
   } = useCart();
   const { data: products, loading: productsLoading } = useProducts();
 
@@ -54,6 +57,9 @@ export function useCartDetails() {
     getTotalItems,
     getTotalPrice,
     clearCart,
+    isCartOpen,
+    openCart,
+    closeCart,
     loading: productsLoading,
   };
 }

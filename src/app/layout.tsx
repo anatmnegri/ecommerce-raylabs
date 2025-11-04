@@ -3,6 +3,7 @@ import { Bebas_Neue, Poppins } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { CartProvider } from "@/contexts/CartContext";
+import { CartSidebar } from "@/components/CartSidebar";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -32,6 +33,7 @@ export default function RootLayout({
         <CartProvider>
           <Header />
           {children}
+          <CartSidebar />
         </CartProvider>
       </body>
     </html>
