@@ -1,5 +1,3 @@
-## Getting Started
-
 # Ecommerce Raylabs Frontend
 
 Este projeto é o frontend de um sistema de e-commerce desenvolvido com Next.js, TypeScript e Tailwind CSS.
@@ -7,10 +5,19 @@ Este projeto é o frontend de um sistema de e-commerce desenvolvido com Next.js,
 ## Funcionalidades Implementadas
 
 - **Catálogo de Produtos**: Visualização de produtos com detalhes.
+<img width="1524" height="898" alt="image" src="https://github.com/user-attachments/assets/837ea4ce-02a7-429c-96bf-adbe45e9fb46" />
+
 - **Carrinho de Compras**: Adição, remoção e visualização de itens no carrinho.
+<img width="1535" height="904" alt="image" src="https://github.com/user-attachments/assets/a9ea87d8-c178-4b91-a959-7576d12ff81c" />
+
 - **Checkout**: Para finalizar a compra.
+<img width="1529" height="385" alt="image" src="https://github.com/user-attachments/assets/5578440a-5daf-43bf-883a-5103344a5318" />
+
 - **Pedidos**: Consulta de pedidos realizados com status de processamento.
+<img width="1521" height="726" alt="image" src="https://github.com/user-attachments/assets/8b462229-65f8-4714-bac2-c68fc388adb4" />
+
 - **Interface Responsiva**: Layout adaptado para dispositivos móveis e desktop.
+<img width="454" height="810" alt="image" src="https://github.com/user-attachments/assets/fb55ab05-15f0-406a-a37c-69911958e0ac" />
 
 ## Tecnologias Utilizadas
 
@@ -47,7 +54,7 @@ Este projeto é o frontend de um sistema de e-commerce desenvolvido com Next.js,
     ```bash
     npm run dev
     ```
-3.  Faça os passos para iniciar a API.
+3.  Faça os passos para iniciar a API: [https://github.com/anatmnegri/ecommerce-api](https://github.com/anatmnegri/ecommerce-api) e popule os produtos e usuários.
 4.  Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
 ## Sobre
