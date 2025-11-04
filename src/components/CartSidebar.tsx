@@ -102,7 +102,7 @@ export function CartSidebar() {
               </div>
               <Button
                 onClick={handleCheckout}
-                className="w-full bg-[#EE8542] hover:bg-[#EE8542]/90 text-white font-semibold py-3"
+                className="w-full rounded-full font-semibold py-3"
                 size="lg"
               >
                 Finalizar Compra
