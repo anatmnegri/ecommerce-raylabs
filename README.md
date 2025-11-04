@@ -2,17 +2,56 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+ # Ecommerce Raylabs Frontend
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ Este projeto é o frontend de um sistema de e-commerce desenvolvido com Next.js, TypeScript e Tailwind CSS. O objetivo é oferecer uma experiência moderna e responsiva para usuários que desejam navegar, comprar produtos e acompanhar seus pedidos.
+
+ ## Principais Funcionalidades
+ - **Catálogo de Produtos**: Visualização de produtos com detalhes e destaques.
+ - **Carrinho de Compras**: Adição, remoção e visualização de itens no carrinho.
+ - **Checkout**: Formulário para finalizar a compra e inserir dados do cliente.
+ - **Pedidos**: Consulta de pedidos realizados e detalhes de cada pedido.
+ - **Interface Responsiva**: Layout adaptado para dispositivos móveis e desktop.
+
+ ## Tecnologias Utilizadas
+ - [Next.js](https://nextjs.org/)
+ - [React](https://react.dev/)
+ - [TypeScript](https://www.typescriptlang.org/)
+ - [Tailwind CSS](https://tailwindcss.com/)
+
+ ## Estrutura do Projeto
+ ```
+ ├── public/
+ ├── src/
+ │   ├── app/
+ │   ├── components/
+ │   ├── contexts/
+ │   ├── hooks/
+ │   ├── lib/
+ │   └── services/
+ ├── package.json
+ ├── next.config.ts
+ ├── tailwind.config.js
+ └── ...
+ ```
+
+ ## Como rodar o projeto
+ 1. Instale as dependências:
+	 ```bash
+	 npm install
+	 ```
+ 2. Inicie o servidor de desenvolvimento:
+	 ```bash
+	 npm run dev
+	 ```
+ 3. Acesse [http://localhost:3000](http://localhost:3000) no navegador.
+
+ ## Sobre
+ Desenvolvido por Raylabs para fins de estudo e demonstração de soluções modernas em e-commerce.
+
+ ---
+
+ Sinta-se à vontade para contribuir ou sugerir melhorias!
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
