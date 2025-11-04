@@ -4,9 +4,22 @@ import { MyOrder } from "@/components/MyOrder";
 import { Badge } from "./ui/badge";
 import { useOrders } from "@/hooks/useOrders";
 
-export function MyOrdersTable() {
-  const customerId = "38c70215-96f3-4bba-85cb-b051d2f98268";
+interface MyOrdersTableProps {
+  customerId?: string;
+}
+
+export function MyOrdersTable({ customerId }: MyOrdersTableProps) {
   const { data: orders, loading, error } = useOrders(customerId);
+
+  if (!customerId) {
+    return (
+      <div>
+        <p className="text-muted-foreground">
+          Selecione um usuário para visualizar os pedidos.
+        </p>
+      </div>
+    );
+  }
 
   if (loading) {
     return <div className="p-4">Carregando pedidos...</div>;

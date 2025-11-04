@@ -4,19 +4,12 @@ import logo from "../../public/images/Logo.svg";
 import Link from "next/link";
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { useState } from "react";
-import { useCustomers } from "@/hooks/useCustomer";
 import { useCart } from "@/contexts/CartContext";
+import { UserSelector } from "@/components/UserSelector";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { data: customers, loading, error } = useCustomers();
   const { getTotalItems } = useCart();
-
-  const customerId = "38c70215-96f3-4bba-85cb-b051d2f98268";
-  const customer = customers.find((c) => c.id === customerId);
-  const customerName = customer
-    ? customer.name.split(" ")[0].toUpperCase()
-    : "FULANO";
 
   const totalItems = getTotalItems();
 
@@ -53,12 +46,7 @@ export const Header = () => {
         </nav>
 
         <div className="hidden sm:flex items-center gap-6 text-sm tracking-widest text-[#393330]">
-          <button className="hover:text-[#EE8542] cursor-pointer transition-colors">
-            <Link href="/orders" className="relative flex flex-col">
-              <span>OLÁ, {customerName}</span>
-              <span className="text-xs">Ver Pedidos</span>
-            </Link>
-          </button>
+          <UserSelector />
 
           <button
             className="hover:text-[#EE8542] cursor-pointer transition-colors relative"
@@ -76,6 +64,7 @@ export const Header = () => {
         </div>
 
         <div className="flex sm:hidden items-center gap-4">
+          <UserSelector className="text-xs" />
           <button
             className="hover:text-[#EE8542] cursor-pointer transition-colors relative"
             aria-label="Abrir carrinho"
@@ -89,7 +78,6 @@ export const Header = () => {
               )}
             </Link>
           </button>
-
           <button
             onClick={toggleMenu}
             className="text-[#393330] hover:text-[#EE8542] transition-colors"

@@ -9,7 +9,7 @@ export function useOrders(customerId?: string) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await getOrders();
+        const result = await getOrders(customerId!);
         setData(result);
       } catch (err) {
         setError((err as Error).message || "Erro inesperado");

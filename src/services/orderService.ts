@@ -24,8 +24,8 @@ export interface Order {
   };
 }
 
-export const getOrders = () =>
-  fetchApi<Order[]>("/orders/customer/38c70215-96f3-4bba-85cb-b051d2f98268");
+export const getOrders = (customerId: string) =>
+  fetchApi<Order[]>(`/orders/customer/${customerId}`);
 
 export const createOrder = (orderData: {
   customerId: string;

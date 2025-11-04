@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { CartProvider } from "@/contexts/CartContext";
 import { CartSidebar } from "@/components/CartSidebar";
+import { UserProvider } from "@/contexts/UserContext";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -30,11 +31,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bebasNeue.variable} ${poppins.variable}`}>
       <body className="bg-[#F8F7F3]">
-        <CartProvider>
-          <Header />
-          {children}
-          <CartSidebar />
-        </CartProvider>
+        <UserProvider>
+          <CartProvider>
+            <Header />
+            {children}
+            <CartSidebar />
+          </CartProvider>
+        </UserProvider>
       </body>
     </html>
   );
